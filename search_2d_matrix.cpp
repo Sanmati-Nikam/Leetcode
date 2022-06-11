@@ -25,3 +25,14 @@ public:
         return false;
     }
 };
+
+        //int n=matrix.size();
+        //int m=matrix[0].size();
+        //int row=0 , col = m-1;
+        //while(row<n and col >=0){
+        //    int res= matrix[row][col];
+        //    if(res==target) return true;
+        //    else if(res >=target) col--;
+        //    else row++;
+        //}
+        //return false;
