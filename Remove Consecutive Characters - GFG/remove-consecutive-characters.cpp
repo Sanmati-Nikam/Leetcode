@@ -8,7 +8,7 @@ class Solution{
     public:
     string removeConsecutiveCharacter(string str)
     {
-         string s;
+        string s;
          int start=0,end=str.size()-1;
          while(start<=end){
              while(str[start]==str[start+1] && start<end){
