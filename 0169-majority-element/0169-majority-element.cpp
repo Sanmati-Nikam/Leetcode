@@ -13,28 +13,28 @@ public:
         // }
         // return nums[0];
         
-//         int ans=0,c=1;
-//         for(int i=1;i<nums.size();i++){
-//             if(nums[i]==nums[ans]){
-//                 c++;
-//             }
-//             else c--;
-//             if(c==0){
-//                 ans=i;
-//                 c=1;
-//             }
-            
-//         }
-//         return nums[ans];
-        
-        int c=0,ans=0;
-        for(int i:nums){
-            if(c==0)
-                ans=i;
-            
-            if(i==ans) c++;
+        int ans=0,c=1;
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]==nums[ans]){
+                c++;
+            }
             else c--;
+            if(c==0){
+                ans=i;
+                c=1;
+            }
+            
         }
-        return ans;
-    }
+        return nums[ans];
+        //moore's voting algorithm
+//         int c=0,ans=0;
+//         for(int i:nums){
+//             if(c==0)
+//                 ans=i;
+            
+//             if(i==ans) c++;
+//             else c--;
+//         }
+//         return ans;
+     }
 };
