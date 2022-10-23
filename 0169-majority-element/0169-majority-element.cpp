@@ -25,7 +25,6 @@ public:
             }
             
         }
-        cout<<c;
         return nums[ans];
     }
 };
