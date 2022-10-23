@@ -15,9 +15,9 @@ public:
         
         int ans=0,c=1;
         for(int i=1;i<nums.size();i++){
-            if(nums[i]==nums[ans]){
+            if(nums[i]==nums[ans])
                 c++;
-            }
+            
             else c--;
             if(c==0){
                 ans=i;
