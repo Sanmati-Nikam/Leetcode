@@ -1,16 +1,20 @@
 class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
-        vector<int> ans(1001,0),res;
-        for(int i=0;i<nums1.size();i++){
-            ans[nums1[i]]++;
+        unordered_map<int, int> occ1;
+        vector<int> result;
+        
+        for (int num: nums1) {
+            occ1[num]++;
         }
-        for(int j=0;j<nums2.size();j++){
-            if(ans[nums2[j]]){
-                res.push_back(nums2[j]);
-                ans[nums2[j]]--;
+        
+        for (int num: nums2) {
+            auto itr = occ1.find(num);
+            if (itr != occ1.end() && itr->second > 0) {
+                result.push_back(num);
+                --itr->second;
             }
         }
-        return res;
+        return result;
     }
 };
