@@ -5,9 +5,7 @@ public:
         int c=1;
         for(int i=1;i<nums.size();i++){
             if(nums[i]==nums[i-1]){
-                cout<<nums[i]<<c<<endl;
-                c++;
-                if(c==nums.size()/2+1)
+                if(++c==nums.size()/2+1)
                     return nums[i];
             }
             else c=1;
