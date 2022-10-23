@@ -10,7 +10,6 @@ public:
 //         }
 //         return false;
         
-        if(nums.size()==1) return false;
         map<int,int> m;
         for(int i=0;i<nums.size();i++){
            if(m.find(nums[i])!=m.end())
