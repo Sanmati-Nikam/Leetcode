@@ -1,15 +1,16 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        map<char,pair<int,int>> m;
-        for(int i=0;i<s.size();i++){
-            m[s[i]].first=i;
-            m[s[i]].second++;
-        }
-        for(int i=0;i<s.size();i++){
-            if(m[s[i]].second==1)
-                return m[s[i]].first;
-        }
+
+        int m[128]= {};
+
+        for (auto x: s)
+            m[x]++;
+
+        for(unsigned i = 0; i < s.size(); i++)
+            if(m[s[i]] == 1)
+                return int(i);
+
         return -1;
     }
 };
