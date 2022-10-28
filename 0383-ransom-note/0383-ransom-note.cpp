@@ -10,8 +10,8 @@ public:
         
         while(j<magazine.size())
             m[magazine[j++]-97]--;
-        for(i=0;i<ransomNote.size();i++){
-            if(m[ransomNote[i]-97]>0)
+        for(int k:ransomNote){
+            if(m[k-97]>0)
                 return false;
         }
         return true;
