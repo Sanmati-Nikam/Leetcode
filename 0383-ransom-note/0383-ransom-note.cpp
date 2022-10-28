@@ -5,8 +5,6 @@ public:
         
         int m[128]={0};
         int i=0,j=0;
-        
-        
         while(j<magazine.size())
             m[magazine[j++]-97]++;
         while(i<ransomNote.size()){
