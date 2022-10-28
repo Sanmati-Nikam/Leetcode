@@ -1,8 +1,6 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-
-        
         int m[128]={0};
         int i=0,j=0;
         while(j<magazine.size())
