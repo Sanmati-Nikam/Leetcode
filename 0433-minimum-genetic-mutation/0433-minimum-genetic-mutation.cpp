@@ -1,36 +1,44 @@
 class Solution {
 public:
-  unordered_set<string>st;
-  
-  int minMutation(string start, string end, vector<string>& bank) {
-    for(auto &w: bank) st.insert(w);
-    
-    int level = 0;
-    queue<string>q;
-    q.push(start);
-    while(!q.empty()){
-      int n = q.size();
-      while(n--){
-        string s = q.front(); q.pop();
-        if(s == end) return level;
-        st.erase(s);
+    int minMutation(string start, string end, vector<string>& bank) {
+        queue<pair<string,int>> geneQue;
+        geneQue.push({start, 0});
         
-        for(int i = 0; i != 8; i++){
-          char tmp = s[i];
-          s[i] = 'A';
-          if(st.count(s)) q.push(s), st.erase(s);
-          s[i] = 'C';
-          if(st.count(s)) q.push(s), st.erase(s);
-          s[i] = 'G';
-          if(st.count(s)) q.push(s), st.erase(s);
-          s[i] = 'T';
-          if(st.count(s)) q.push(s), st.erase(s);
-          s[i] = tmp;
+        const int len = bank.size();
+        vector<bool> isUsed(len, false);
+        
+        while(!geneQue.empty()) {
+            const string gene = geneQue.front().first;
+            const int step = geneQue.front().second;
+            
+            if(end.compare(gene) == 0) {
+                return step;
+            }
+            
+            for(int i = 0; i < len; i++) {
+                if(!isUsed[i] && diffCnt(gene, bank[i]) == 1) {
+                    geneQue.push({bank[i], step+1});
+                    isUsed[i] = true;
+                }
+            }
+            
+            geneQue.pop();
         }
-      }
-      level++;
+        
+        return -1;
     }
     
-    return -1;
-  }
+    int diffCnt(const string &str1, const string &str2) {
+        int cnt = 0;
+        for(int i = 0; i < str1.length(); i++) {
+            if(str1[i] != str2[i]) {
+                ++cnt;
+                if(cnt > 1) {
+                    return cnt;
+                }
+            }
+        }
+        
+        return cnt;
+    }
 };
