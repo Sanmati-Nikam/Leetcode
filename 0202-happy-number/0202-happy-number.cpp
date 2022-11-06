@@ -1,7 +1,6 @@
 class Solution {
 public:
-    bool isHappy(int number) {
-        int num=number;
+    bool isHappy(int num) {
         while(num>0){
             int n=num,x=0;
             while(n>0){
