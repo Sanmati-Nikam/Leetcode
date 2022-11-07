@@ -2,13 +2,10 @@ class Solution {
 public:
     vector<vector<int>> transpose(vector<vector<int>>& matrix) {
         int n=matrix.size(),m=matrix[0].size();
-        vector<vector<int>> ans;
+        vector<vector<int>> ans(m,vector<int>(n,0));
         for(int i=0;i<m;i++){
-            vector<int> temp;
-            for(int j=0;j<n;j++){
-                temp.push_back(matrix[j][i]);
-            }
-            ans.push_back(temp);
+            for(int j=0;j<n;j++)
+                ans[i][j]=matrix[j][i];
         }
         return ans;
     }
