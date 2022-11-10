@@ -1,11 +1,9 @@
 class Solution {
 public:
     string removeDuplicates(string s) {
-        for(int i=s.size()-1;i>0;i--){
-            if(s[i]==s[i-1])
-                s.erase(i-1,2);
-        }
-        return s;
+        string res = "";
+        for(char& ch : s)   ch == res.back() ? res.pop_back() : res.push_back(ch);
+        return res;
     }
 };
 
