@@ -12,9 +12,7 @@ public:
            }
            if(ans=="")
                continue;
-           if(!temp.empty())
-           temp=ans+' '+temp;
-           else temp=ans;
+           temp.empty()?temp=ans:temp=ans+' '+temp;
            ans="";
            cnt++;
            
