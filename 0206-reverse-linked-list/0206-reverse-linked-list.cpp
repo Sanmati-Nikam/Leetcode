@@ -19,7 +19,6 @@ public:
         return reverse(newhead,head);
     }
     ListNode* reverseList(ListNode* head) {
-       // ListNode* prev = head;
        return reverse(head,nullptr);
        
     }
