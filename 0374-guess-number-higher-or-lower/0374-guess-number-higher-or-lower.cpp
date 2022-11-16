@@ -1,7 +1,7 @@
 class Solution {
 public:
     int guessNumber(int n) {
-        int start = 0, end = n;
+        int start = 1, end = n;
         if(guess(n) == 0)
             return n;
         
