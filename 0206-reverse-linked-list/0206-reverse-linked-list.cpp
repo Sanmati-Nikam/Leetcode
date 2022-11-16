@@ -15,16 +15,19 @@ public:
 //         if(head==nullptr)
 //             return prev;
       
-//         ListNode* newhead = head->next; 
+//         ListNode* newhead = head->next;                    
 //         head->next = prev;
 //         return reverse(newhead,head);
 //     }
-     ListNode* reverseList(ListNode* head) {
+      ListNode* reverseList(ListNode* head) {
 //        return reverse(head,nullptr);
 //     }
     
     //iterative
+    if (head == nullptr || head->next == nullptr) return head;        
+
     ListNode* curr = head, *prev = NULL,*next=NULL;
+    
     while(curr){
         next = curr->next;
         curr->next = prev;
