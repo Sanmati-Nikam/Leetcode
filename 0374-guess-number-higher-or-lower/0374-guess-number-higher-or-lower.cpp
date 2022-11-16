@@ -1,17 +1,14 @@
 class Solution {
 public:
     int guessNumber(int n) {
-        int start = 1, end = n;
-        if(guess(n) == 0)
-            return n;
+        int start = 1, end = n,mid;
         
     while(start <= end){
-            int mid = end - (end - start)/2;
-            int g = guess(mid);
-            if(g == 0)
+            mid = end - (end - start)/2;
+            if(guess(mid) == 0)
                 return mid;
         
-            else if(g ==-1)
+            else if(guess(mid) ==-1)
                 end = mid-1;
             
             else
