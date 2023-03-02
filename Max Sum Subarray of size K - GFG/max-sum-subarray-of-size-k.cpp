@@ -13,8 +13,7 @@ public:
         long start=0,end=0,sum=0;
         for(long i=0;i<N;i++){
             if(end-start==k){
-                sum-=nums[start];
-                start++;
+                sum-=nums[start++];
             }
             sum+=nums[i];
             ans=max(ans,sum);
